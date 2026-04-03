@@ -5,25 +5,32 @@ const Container = styled.div`
     display:flex;
     flex-direction: column;
     justify-content:center;
-    align-item: center;
-    border: 2px dashed  ${({ theme }) => theme.soft};
+    align-items: center;
+    border: 1px solid ${({ theme }) => theme.soft + "44"};
     border-radius: 12px;
     color: ${({ theme }) => theme.soft};
-    padding: 4px;
-    color: ${({ theme }) => theme.soft};
+    padding: 6px;
+    background: #ffffff06;
 `;
 
 const Image = styled.img`
-    width: 140px;
-    height: 140px;
-    object-fit: fill;
-    border-radius: 12px;
+    width: 100%;
+    max-width: 140px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
 `;
 
 const ImageText = styled.div`
     text-align: center;
-    padding: 4px;
+    padding: 6px 4px 2px 4px;
     font-weight: 500;
+    color: ${({ theme }) => theme.textSoft};
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 130px;
 `;
 
 const ImagesCard = ({ image }) => {
