@@ -30,40 +30,39 @@ Install the requirements
 pip install -r requirements.txt
 ```
 
-## Start the server
+## Run locally (Windows)
 
-Open a new terminal and type
-
+Install backend requirements:
 ```
-gunicorn app:app
+python -m pip install -r requirements.txt
 ```
 
-## Start both (Windows)
-From the project root, run:
-```
-start.bat
-```
-Backend: `http://localhost:5000`  
-Frontend: `http://localhost:3000`
-
-## Start the web app
-
-Open a new terminal
-
+Install frontend dependencies:
 ```
 cd client
-```
-
-Install the dependencies
-```
 npm install
+cd ..
 ```
 
-Start the react app
+### Start both with one command
+From PowerShell at project root:
 ```
+.\start.bat
+```
+
+### Manual start (two terminals)
+Terminal 1 (backend):
+```
+python app.py
+```
+Backend URL: `http://127.0.0.1:5000`
+
+Terminal 2 (frontend):
+```
+cd client
 npm start
 ```
-And you are good to go!
+Frontend URL: `http://localhost:3000`
 
 
 

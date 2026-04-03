@@ -49,4 +49,5 @@ def read_root():
 
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    # Bind explicitly so localhost requests always work on Windows.
+    app.run(host="127.0.0.1", port=5000)

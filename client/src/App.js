@@ -122,7 +122,7 @@ function App() {
   const [predictions, setPredictions] = useState();
   const [loading, setLoading] = useState(false);
   const [showPrediction, setShowPrediction] = useState(false);
-  const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+  const API_BASE_URL = "http://127.0.0.1:5000";
 
   const generatePrediction = async () => {
     if (!images?.length) return;
