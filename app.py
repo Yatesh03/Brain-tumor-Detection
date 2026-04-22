@@ -1,6 +1,9 @@
 from flask import Flask, request
-from tf_keras.models import model_from_json
+import os
+os.environ["TF_USE_LEGACY_KERAS"] = "1"
 import tensorflow as tf
+import tf_keras
+from tf_keras.models import model_from_json
 from flask_cors import CORS
 import numpy as np
 import cv2
@@ -23,7 +26,7 @@ with open('model.json', 'r', encoding='utf-8') as json_file:
     loaded_model_json = json_file.read()
 loaded_model = model_from_json(loaded_model_json)
 loaded_model.load_weights("model.h5")
-grad_cam_model = tf.keras.models.Model(
+grad_cam_model = tf_keras.Model(
     [loaded_model.inputs],
     [loaded_model.get_layer("block5_conv3").output, loaded_model.output],
 )
